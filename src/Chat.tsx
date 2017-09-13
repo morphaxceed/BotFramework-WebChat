@@ -155,6 +155,9 @@ export class Chat extends React.Component<ChatProps, {}> {
         if (state.format.options.showHeader) header =
             <div className="wc-header">
                 <span>{ state.format.strings.title }</span>
+                <span className='custom-controls'>
+                    <span className='minimize-window'></span>
+                </span>
             </div>;
 
         let resize: JSX.Element;
