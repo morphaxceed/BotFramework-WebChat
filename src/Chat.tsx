@@ -176,7 +176,6 @@ export class Chat extends React.Component<ChatProps, {}> {
                         <History setFocus={ () => this.setFocus() }/>
                     </MessagePane>
                     <Shell />
-                    <PoweredBy />
                     { resize }
                 </div>
             </Provider>

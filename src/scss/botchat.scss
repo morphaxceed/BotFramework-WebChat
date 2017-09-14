@@ -182,6 +182,18 @@
         left: 0;
         position: absolute;
         right: 0;
+
+        display: flex;
+        justify-content: flex-end;
+
+        .note {
+            align-self: center;
+            margin-right: 0.5rem;
+        }
+        .logo {
+            width: $poweredByWidth;
+            height: $poweredByHeight;
+        }
     }
 
 /* views */
