@@ -12,6 +12,8 @@ import { Speech } from './SpeechModule';
 import { ActivityOrID, FormatOptions } from './Types';
 import * as konsole from './Konsole';
 
+const WINDOW_OPEN_TARGET_WINDOW_NAME = '_parent';
+
 export interface ChatProps {
     user: User,
     bot: User,
@@ -214,7 +216,7 @@ export const doCardAction = (
         case "showImage":
         case "downloadFile":
         case "signin":
-            window.open(text);
+            window.open(text, WINDOW_OPEN_TARGET_WINDOW_NAME);
             break;
 
         default:
