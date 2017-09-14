@@ -167,9 +167,18 @@
 
     .wc-console {
         border: 5px solid $c_chrome;
-        bottom: 0;
+        bottom: $poweredByHeight;
         box-sizing: border-box;
         height: $consoleHeight;
+        left: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    .powered-by-exceed {
+        bottom: 0;
+        box-sizing: border-box;
+        height: $poweredByHeight;
         left: 0;
         position: absolute;
         right: 0;

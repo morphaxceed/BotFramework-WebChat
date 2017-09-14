@@ -31,6 +31,7 @@ export interface ChatProps {
 import { History } from './History';
 import { MessagePane } from './MessagePane';
 import { Shell } from './Shell';
+import { PoweredBy } from './PoweredBy';
 
 export class Chat extends React.Component<ChatProps, {}> {
 
@@ -175,6 +176,7 @@ export class Chat extends React.Component<ChatProps, {}> {
                         <History setFocus={ () => this.setFocus() }/>
                     </MessagePane>
                     <Shell />
+                    <PoweredBy />
                     { resize }
                 </div>
             </Provider>
