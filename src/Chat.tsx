@@ -22,7 +22,8 @@ export interface ChatProps {
     selectedActivity?: BehaviorSubject<ActivityOrID>,
     sendTyping?: boolean,
     formatOptions?: FormatOptions,
-    resize?: 'none' | 'window' | 'detect'
+    resize?: 'none' | 'window' | 'detect',
+    onClickMinimizeWindow: any,
 }
 
 import { History } from './History';
@@ -156,7 +157,7 @@ export class Chat extends React.Component<ChatProps, {}> {
             <div className="wc-header">
                 <span>{ state.format.strings.title }</span>
                 <span className='custom-controls'>
-                    <span className='minimize-window'></span>
+                    <span className='minimize-window' onClick={this.props.onClickMinimizeWindow}></span>
                 </span>
             </div>;
 
