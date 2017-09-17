@@ -13,8 +13,19 @@ export const FormattedText = (props: IFormattedTextProps) => {
 
     switch (props.format) {
         case "xml":
-        case "plain":
-            return renderPlainText(props.text);
+        case "plain": {
+            let text = props.text
+            try { // Checking if this is a JSON (button/quick-reply/etc')
+                const textAsJson = JSON.parse(props.text)
+                if ( ! (textAsJson && ('object' === typeof(textAsJson))))
+                    throw new Error(`Passed 'JSON.parse()' but not a JSON. typeof=${typeof(textAsJson)}`)
+                // Yup, that's a JSON
+                text = textAsJson['title']
+            } catch(error) {
+                // Just continue
+            }
+            return renderPlainText(text);
+        }
         default:
             return renderMarkdown(props.text, props.onImageLoad);
     }
