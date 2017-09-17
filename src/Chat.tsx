@@ -25,7 +25,7 @@ export interface ChatProps {
     sendTyping?: boolean,
     formatOptions?: FormatOptions,
     resize?: 'none' | 'window' | 'detect',
-    onClickMinimizeWindow: any,
+    onClickMinimizeWindow: (event: any) => void,
 }
 
 import { History } from './History';
