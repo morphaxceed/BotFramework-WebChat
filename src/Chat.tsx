@@ -181,6 +181,10 @@ export class Chat extends React.Component<ChatProps, {}> {
             </Provider>
         );
     }
+
+    sendMessage(text:string) {
+        return this.store.dispatch<ChatActions>(sendMessage(text, this.props['user'], this.props['locale']));
+    }
 }
 
 export interface IDoCardAction {
